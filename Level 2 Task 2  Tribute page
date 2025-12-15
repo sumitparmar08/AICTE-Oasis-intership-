@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tribute Page</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+    header {
+      background: #0f9d58;
+      padding: 30px;
+    }
+    img {
+      width: 200px;
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+    section {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Dr. A. P. J. Abdul Kalam</h1>
+  <p>Missile Man of India</p>
+</header>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/A._P._J._Abdul_Kalam.jpg">
+
+<section>
+  <h2>Why I Admire Him</h2>
+  <p>
+    Dr. A. P. J. Abdul Kalam was an aerospace scientist and the 11th President of India.
+    He inspired millions of students with his vision, humility, and dedication to the nation.
+  </p>
+
+  <p>
+    His life teaches us that hard work, discipline, and dreams can change the future of a country.
+  </p>
+</section>
+
+</body>
+</html>
