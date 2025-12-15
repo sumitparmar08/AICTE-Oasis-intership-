@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial;
+    }
+    .calculator {
+      background: #333;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input {
+      width: 100%;
+      height: 50px;
+      font-size: 22px;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+    button {
+      width: 60px;
+      height: 60px;
+      font-size: 18px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calculator">
+  <input type="text" id="display" disabled>
+
+  <br>
+  <button onclick="clr()">C</button>
+  <button onclick="del()">DEL</button>
+  <button onclick="add('/')">/</button>
+  <button onclick="add('*')">*</button>
+
+  <br>
+  <button onclick="add('7')">7</button>
+  <button onclick="add('8')">8</button>
+  <button onclick="add('9')">9</button>
+  <button onclick="add('-')">-</button>
+
+  <br>
+  <button onclick="add('4')">4</button>
+  <button onclick="add('5')">5</button>
+  <button onclick="add('6')">6</button>
+  <button onclick="add('+')">+</button>
+
+  <br>
+  <button onclick="add('1')">1</button>
+  <button onclick="add('2')">2</button>
+  <button onclick="add('3')">3</button>
+  <button onclick="calc()">=</button>
+
+  <br>
+  <button onclick="add('0')">0</button>
+  <button onclick="add('.')">.</button>
+</div>
+
+<script>
+  let display = document.getElementById("display");
+
+  function add(value) {
+    display.value += value;
+  }
+
+  function clr() {
+    display.value = "";
+  }
+
+  function del() {
+    display.value = display.value.slice(0, -1);
+  }
+
+  function calc() {
+    try {
+      display.value = eval(display.value);
+    } catch {
+      alert("Invalid Expression");
+    }
+  }
+</script>
+
+</body>
+</html>
