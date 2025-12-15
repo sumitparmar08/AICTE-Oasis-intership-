@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To Do Web App</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f9d58;
+      text-align: center;
+      padding-top: 50px;
+      color: white;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+    }
+    .box {
+      background: white;
+      color: black;
+      width: 300px;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>To Do App</h1>
+
+<input id="task" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+
+<div class="box">
+  <h3>Pending Tasks</h3>
+  <ul id="pending"></ul>
+</div>
+
+<div class="box">
+  <h3>Completed Tasks</h3>
+  <ul id="completed"></ul>
+</div>
+
+<script>
+  function addTask() {
+    let taskText = document.getElementById("task").value;
+    if (taskText === "") return alert("Enter task");
+
+    let li = document.createElement("li");
+    li.innerHTML = taskText +
+      " <button onclick='completeTask(this)'>✔</button>";
+
+    document.getElementById("pending").appendChild(li);
+    document.getElementById("task").value = "";
+  }
+
+  function completeTask(btn) {
+    let li = btn.parentElement;
+    btn.remove();
+    li.innerHTML += " <button onclick='this.parentElement.remove()'>X</button>";
+    document.getElementById("completed").appendChild(li);
+  }
+</script>
+
+</body>
+</html>
